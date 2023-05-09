@@ -9,7 +9,10 @@ export default function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const grades = ['Good', 'Neutral', 'Bad'];
+
   const handleFeedback = e => {
+    console.log(e);
     if (e === 'Good') {
       setGood(good + 1);
     } else if (e === 'Neutral') {
@@ -45,10 +48,7 @@ export default function App() {
       }}
     >
       <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={['Good', 'Neutral', 'Bad']}
-          onLeaveFeedback={handleFeedback}
-        />{' '}
+        <FeedbackOptions options={grades} onLeaveFeedback={handleFeedback} />{' '}
       </Section>
 
       <Section title="Statistics">
